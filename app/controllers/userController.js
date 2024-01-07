@@ -33,17 +33,14 @@ function userController() {
             return { success: true, message: "Fetched.", data: bard }
         },
         //Get user details
-        async userDetails({ jwt, set, cookie: { sessionId } }) {
+        async userDetails(context) {
             try {
-                const sessionInfo = await jwt.verify(sessionId)
-                // console.log("sessionInfo", sessionInfo);
-                if(sessionInfo){
-                    const sessionData = await Session.findById(new mongoose.Schema.Types.ObjectId(sessionInfo?.session_Id))
 
-                }
-                
-                set.status = 200;
-                return { success: true, message: "Done", data: sessionInfo }
+                console.log("controller called");
+                const dataa = context.set.userInfo
+                console.log(dataa);
+                context.set.status = 200;
+                return { success: true, message: "User data found", data: dataa }
 
             } catch (err) {
                 set.status = 500;
