@@ -1,0 +1,19 @@
+{
+  "name": "elysiajs-app",
+  "version": "1.0.0",
+  "description": "A web application using elysiajs framework",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch index.js",
+    "start": "bun run index.js"
+  },
+  "dependencies": {
+    "@elysiajs/cookie": "^0.8.0",
+    "@elysiajs/jwt": "^0.8.0",
+    "bun": "^1.0.0",
+    "elysia": "^0.8.8",
+    "mongoose": "^8.0.3",
+    "nodemon": "^3.0.1"
+  }
+}
