@@ -4,7 +4,7 @@ const { default: Session } = require("../models/Session");
 function userController() {
     return {
         //userController
-        userTestController({ set }) {
+        userTestController(ctx) {
             const bard = {
                 name: "Bard",
                 age: 2,
@@ -30,6 +30,7 @@ function userController() {
                 ],
                 skills: ["writing", "translation", "coding", "data analysis"]
             };
+            ctx.set.status=201;
             return { success: true, message: "Fetched.", data: bard }
         },
         //Get user details
